@@ -21,6 +21,17 @@
       "image": "images/664610e609351_images_large.jpeg",
       "quote": "AAA",
       "description": "AAA"
+    },
+    {
+      "quoteAuthor": "aaaaa",
+      "publication": "aaaa",
+      "date": "2026-07-27",
+      "title": "nvl article",
+      "linkLabel": "Lire l'articl",
+      "link": "aaa",
+      "image": "images/664613320c96c_images_large.jpeg",
+      "quote": "aaaa",
+      "description": "aaaaa"
     }
   ]
 }
