@@ -1,71 +1,76 @@
 /* Styles pour le contenu des actualités piloté par data/articles.json.
    Volontairement indépendant des classes Framer (hashées, fragiles) :
-   voir CLAUDE.md / admin/README pour le contexte. */
+   voir CLAUDE.md / README-CMS.md pour le contexte. */
 
 .sama-featured {
   display: flex;
-  flex-direction: row;
-  align-items: stretch;
-  gap: 32px;
+  align-items: flex-start;
+  gap: 28px;
   width: 100%;
+  margin-bottom: 8px;
+  padding: 0 130px;
+  box-sizing: border-box;
   font-family: "Inter", "Inter Placeholder", sans-serif;
   color: rgb(82, 135, 144);
 }
 
 .sama-featured__text {
-  width: 55%;
+  width: 58%;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  gap: 20px;
+  gap: 12px;
 }
 
 .sama-featured__title {
-  font-size: 20px;
+  font-size: 19px;
   font-weight: 600;
   letter-spacing: -0.03em;
+  line-height: 1.3;
   margin: 0;
 }
 
 .sama-featured__description {
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 300;
-  letter-spacing: -0.06em;
+  line-height: 1.5;
+  letter-spacing: -0.02em;
   text-align: justify;
   margin: 0;
 }
 
 .sama-featured__quote {
   border-left: 2px solid #f9ff8f;
-  padding-left: 16px;
+  padding-left: 14px;
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 6px;
 }
 
 .sama-featured__quote p {
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 300;
-  letter-spacing: -0.06em;
+  line-height: 1.5;
+  letter-spacing: -0.02em;
   text-align: justify;
   margin: 0;
 }
 
 .sama-featured__quote-author {
+  font-size: 12px;
   font-weight: 600;
 }
 
 .sama-featured__link {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
   align-self: flex-start;
   padding: 8px 14px;
   background-color: rgb(82, 135, 144);
   color: #fff;
   font-size: 12px;
   text-decoration: none;
-  border: 1px solid #fcfcfc;
+  border-radius: 2px;
 }
 
 .sama-featured__link svg {
@@ -75,9 +80,12 @@
 }
 
 .sama-featured__image {
-  width: 45%;
-  position: relative;
+  width: 42%;
+  max-width: 280px;
+  aspect-ratio: 4 / 3;
+  flex-shrink: 0;
   overflow: hidden;
+  border-radius: 4px;
 }
 
 .sama-featured__image img {
@@ -85,57 +93,66 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: top;
 }
 
 .sama-other-articles {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 16px;
   width: 100%;
+  padding: 0 130px;
+  box-sizing: border-box;
   font-family: "Inter", "Inter Placeholder", sans-serif;
   color: rgb(82, 135, 144);
 }
 
 .sama-other-articles__empty {
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 600;
   letter-spacing: -0.03em;
 }
 
 .sama-article-card {
   display: flex;
-  flex-direction: row;
-  gap: 24px;
   align-items: flex-start;
-  padding-top: 20px;
+  gap: 16px;
+  padding-top: 16px;
   border-top: 1px solid rgba(82, 135, 144, 0.15);
 }
 
 .sama-article-card__image {
-  width: 160px;
+  width: 110px;
+  max-width: 110px;
+  aspect-ratio: 4 / 3;
   flex-shrink: 0;
+  overflow: hidden;
+  border-radius: 4px;
 }
 
 .sama-article-card__image img {
   display: block;
   width: 100%;
-  height: auto;
+  height: 100%;
   object-fit: cover;
+  object-position: top;
 }
 
 .sama-article-card__title {
-  font-size: 18px;
+  font-size: 15px;
   font-weight: 600;
   letter-spacing: -0.03em;
-  margin: 0 0 8px;
+  line-height: 1.3;
+  margin: 0 0 4px;
 }
 
 .sama-article-card__description {
   font-size: 12px;
   font-weight: 300;
-  letter-spacing: -0.06em;
+  line-height: 1.4;
+  letter-spacing: -0.02em;
   text-align: justify;
-  margin: 0 0 12px;
+  margin: 0 0 6px;
 }
 
 .sama-article-card__link {
@@ -144,18 +161,35 @@
   text-decoration: underline;
 }
 
+@media (min-width: 810px) and (max-width: 1199.98px) {
+  .sama-featured,
+  .sama-other-articles {
+    padding: 0 40px;
+  }
+}
+
 @media (max-width: 809.98px) {
+  .sama-featured,
+  .sama-other-articles {
+    padding: 0 20px;
+  }
   .sama-featured {
     flex-direction: column;
   }
-  .sama-featured__text,
+  .sama-featured__text {
+    width: 100%;
+  }
   .sama-featured__image {
     width: 100%;
+    max-width: none;
+    aspect-ratio: 16 / 9;
   }
   .sama-article-card {
     flex-direction: column;
   }
   .sama-article-card__image {
     width: 100%;
+    max-width: none;
+    aspect-ratio: 16 / 9;
   }
 }
