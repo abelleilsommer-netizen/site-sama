@@ -67,7 +67,7 @@ function renderOthers(container, articles) {
     .map(
       (article) => `
       <article class="sama-article-card">
-        <div>
+        <div class="sama-article-card__text">
           <h4 class="sama-article-card__title">${article.title || ""}</h4>
           <p class="sama-article-card__description">${article.description || ""}</p>
           ${

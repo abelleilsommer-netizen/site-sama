@@ -15,7 +15,8 @@
 }
 
 .sama-featured__text {
-  width: 58%;
+  flex: 1;
+  min-width: 0;
   display: flex;
   flex-direction: column;
   gap: 12px;
@@ -119,6 +120,11 @@
   gap: 16px;
   padding-top: 16px;
   border-top: 1px solid rgba(82, 135, 144, 0.15);
+}
+
+.sama-article-card__text {
+  flex: 1;
+  min-width: 0;
 }
 
 .sama-article-card__image {
