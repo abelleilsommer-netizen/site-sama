@@ -3,7 +3,7 @@
 ## Comment ça marche
 - `data/articles.json` contient la liste des articles (le premier de la liste = celui affiché en
   "A LA UNE", les suivants apparaissent dans "AUTRES ARTICLES").
-- `assets/articles.js` lit ce fichier et génère le contenu de `actualite.html` au chargement de la
+- `assets/articles.js` lit ce fichier et génère le contenu de `actualites.html` au chargement de la
   page. `assets/articles.css` contient les styles associés.
 - `admin/` est l'interface [Decap CMS](https://decapcms.org/) : un formulaire web qui permet
   d'ajouter/modifier/réordonner les articles sans toucher au code. Elle écrit directement dans

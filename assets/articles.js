@@ -67,11 +67,6 @@ function renderOthers(container, articles) {
     .map(
       (article) => `
       <article class="sama-article-card">
-        ${
-          article.image
-            ? `<div class="sama-article-card__image"><img src="${article.image}" alt="${article.title || ""}" loading="lazy"></div>`
-            : ""
-        }
         <div>
           <h4 class="sama-article-card__title">${article.title || ""}</h4>
           <p class="sama-article-card__description">${article.description || ""}</p>
@@ -83,6 +78,11 @@ function renderOthers(container, articles) {
               : ""
           }
         </div>
+        ${
+          article.image
+            ? `<div class="sama-article-card__image"><img src="${article.image}" alt="${article.title || ""}" loading="lazy"></div>`
+            : ""
+        }
       </article>`
     )
     .join("");

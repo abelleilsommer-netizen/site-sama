@@ -8,7 +8,7 @@ This is a **static site export from Framer** (framer.com), not a hand-authored c
 
 There is no source project, build tooling, package manager, or framework config here — only the generated static output:
 
-- `index.html`, `a-propos.html`, `actualite.html`, `contact.html`, `expertises.html`, `mention-legales.html`, `politique-confidentialite.html` — the site's pages (French).
+- `index.html`, `a-propos.html`, `actualites.html`, `contact.html`, `expertises.html`, `mention-legales.html`, `politique-confidentialite.html` — the site's pages (French).
 - `js/` — Framer's minified/bundled runtime (`.mjs` chunks with hashed filenames), plus `rerouter.js` and `init.mjs` which remap `framerusercontent.com` / `app.framerstatic.com` URLs to local `images/`/`js/` paths so the export works standalone.
 - `images/` — all site assets (fonts as `.woff2`, images, icons), renamed to hashed filenames matching the URL remapping table in `js/rerouter.js`.
 
