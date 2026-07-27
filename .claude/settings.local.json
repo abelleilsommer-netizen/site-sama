@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(cp a-propos.html a-propos.html.bak)",
+      "Bash(sed -i 's/background-color:rgb\\(249, 255, 143\\)\"/background-color:rgb\\(249, 255, 143\\);display:flex;flex-direction:row;flex-wrap:nowrap;align-items:center\"/g' a-propos.html)"
+    ]
+  }
+}

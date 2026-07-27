@@ -1,0 +1,35 @@
+backend:
+  name: git-gateway
+  branch: main
+
+# En local ce backend ne s'authentifiera pas (normal) : il nécessite Netlify
+# Identity + Git Gateway activés sur le site déployé. Voir README-CMS.md.
+
+media_folder: "images"
+public_folder: "images"
+
+collections:
+  - name: "articles"
+    label: "Actualités"
+    label_singular: "Article"
+    description: "Les articles affichés sur la page Actualités du site."
+    files:
+      - name: "articles"
+        label: "Liste des actualités"
+        file: "data/articles.json"
+        fields:
+          - name: "articles"
+            label: "Articles"
+            label_singular: "Article"
+            widget: "list"
+            summary: "{{title}}"
+            fields:
+              - { name: "title", label: "Titre", widget: "string" }
+              - { name: "date", label: "Date", widget: "datetime", format: "YYYY-MM-DD" }
+              - { name: "publication", label: "Publié dans (ex: Le Figaro Partner)", widget: "string", required: false }
+              - { name: "description", label: "Description", widget: "text" }
+              - { name: "quote", label: "Citation", widget: "text", required: false }
+              - { name: "quoteAuthor", label: "Auteur de la citation", widget: "string", required: false }
+              - { name: "link", label: "Lien externe (article, PDF...)", widget: "string", required: false }
+              - { name: "linkLabel", label: "Texte du lien", widget: "string", required: false, default: "Lire l'article" }
+              - { name: "image", label: "Image", widget: "image", required: false }
